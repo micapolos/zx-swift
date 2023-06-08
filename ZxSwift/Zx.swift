@@ -33,10 +33,36 @@ struct Zx {
   var pixels: UInt8 = 0
   
   var flashCounter: UInt8 = 0
+  
+  var reg = Reg()
+}
+
+struct Reg {
+  var pc: UInt16 = 0
+  var sp: UInt16 = 0
+  var lhs: UInt8 = 0
+  var rhs: UInt8 = 0
+  var a: UInt8 = 0
+  var f: UInt8 = 0
+  var a2: UInt8 = 0
+  var f2: UInt8 = 0
+  var wz: UInt16 = 0
+  var bc: UInt16 = 0
+  var de: UInt16 = 0
+  var hl: UInt16 = 0
+  var wz2: UInt16 = 0
+  var bc2: UInt16 = 0
+  var de2: UInt16 = 0
+  var hl2: UInt16 = 0
+  var ix: UInt16 = 0
+  var iy: UInt16 = 0
+  var i: UInt8 = 0
+  var r: UInt8 = 0
+  var op: UInt8 = 0
 }
 
 extension Zx {
-  mutating func update(steps: Int, videoMem: UnsafeMutablePointer<UInt32>, scrMem: UnsafeMutablePointer<UInt8>) {
+  mutating func update(steps: Int, videoMem: UnsafeMutablePointer<UInt32>, romMem: UnsafePointer<UInt8>, scrMem: UnsafeMutablePointer<UInt8>) {
     for _ in 0..<steps {
       let hScreenWrite = hCounter >= Zx.hLeftBorderSize && hCounter < Zx.hLeftBorderSize &+ Zx.hScreenSize
       let vScreenWrite = vCounter >= Zx.vTopBorderSize && vCounter < Zx.vTopBorderSize &+ Zx.vScreenSize
