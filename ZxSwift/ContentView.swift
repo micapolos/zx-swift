@@ -14,7 +14,7 @@ struct ContentView: View {
     var zx = Zx()
     var lastDate: Date? = nil
     let romData = try! Data(contentsOf: Bundle.main.url(forResource: "Zx", withExtension: "rom")!)
-    let scrData = try! Data(contentsOf: Bundle.main.url(forResource: "DynamiteDan", withExtension: "scr")!)
+    let scrData = try! Data(contentsOf: Bundle.main.url(forResource: "RoboCop", withExtension: "scr")!)
     TimelineView(.animation) { timeline in
       Canvas { context, size in
         let timeInterval = timeline.date.timeIntervalSince(lastDate ?? timeline.date)
@@ -26,7 +26,7 @@ struct ContentView: View {
         let videoMem = ctx.data!.bindMemory(to: UInt32.self, capacity: Int(vMemSize))
         
         let updateStartDate = Date.now
-        _ = scrData.withUnsafeBytes { scrMem in
+        scrData.withUnsafeBytes { scrMem in
           romData.withUnsafeBytes { romMem in
             zx.videoMem = videoMem
             zx.romMem = romMem
@@ -40,7 +40,7 @@ struct ContentView: View {
         let image = Image(ctx.makeImage()!, scale: 1, label: Text(verbatim: "dupa")).interpolation(.none)
         
         context.draw(image, in: CGRect(origin: .zero, size: size))
-      }.aspectRatio(CGSize(width: CGFloat(hLineSize), height: CGFloat(vLineSize)), contentMode: ContentMode.fill)
+      }.aspectRatio(CGSize(width: 4.0, height: 3.0), contentMode: ContentMode.fill)
     }
   }
 }

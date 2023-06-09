@@ -16,6 +16,7 @@
 		493A3C182A31E913001B6D76 /* ManicMiner.scr in Resources */ = {isa = PBXBuildFile; fileRef = 493A3C142A31E913001B6D76 /* ManicMiner.scr */; };
 		493A3C192A31E913001B6D76 /* DynamiteDan.scr in Resources */ = {isa = PBXBuildFile; fileRef = 493A3C152A31E913001B6D76 /* DynamiteDan.scr */; };
 		493A3C1A2A31E913001B6D76 /* Exolon.scr in Resources */ = {isa = PBXBuildFile; fileRef = 493A3C162A31E913001B6D76 /* Exolon.scr */; };
+		497CB3CE2A33A9B8006FFC4C /* Spellbound.scr in Resources */ = {isa = PBXBuildFile; fileRef = 497CB3CD2A33A9B8006FFC4C /* Spellbound.scr */; };
 		49D415122A334EC900DD422A /* zx.c in Sources */ = {isa = PBXBuildFile; fileRef = 49D415112A334EC900DD422A /* zx.c */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +32,7 @@
 		493A3C142A31E913001B6D76 /* ManicMiner.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ManicMiner.scr; sourceTree = "<group>"; };
 		493A3C152A31E913001B6D76 /* DynamiteDan.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = DynamiteDan.scr; sourceTree = "<group>"; };
 		493A3C162A31E913001B6D76 /* Exolon.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Exolon.scr; sourceTree = "<group>"; };
+		497CB3CD2A33A9B8006FFC4C /* Spellbound.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Spellbound.scr; sourceTree = "<group>"; };
 		49D4150F2A334EC900DD422A /* ZxSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZxSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		49D415102A334EC900DD422A /* zx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zx.h; sourceTree = "<group>"; };
 		49D415112A334EC900DD422A /* zx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zx.c; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 				493A3C162A31E913001B6D76 /* Exolon.scr */,
 				493A3C142A31E913001B6D76 /* ManicMiner.scr */,
 				493A3C132A31E913001B6D76 /* RoboCop.scr */,
+				497CB3CD2A33A9B8006FFC4C /* Spellbound.scr */,
 				493A3C0A2A31E89D001B6D76 /* Preview Content */,
 				49D4150F2A334EC900DD422A /* ZxSwift-Bridging-Header.h */,
 			);
@@ -154,6 +157,7 @@
 				493A3C192A31E913001B6D76 /* DynamiteDan.scr in Resources */,
 				493A3C092A31E89D001B6D76 /* Assets.xcassets in Resources */,
 				493A3C172A31E913001B6D76 /* RoboCop.scr in Resources */,
+				497CB3CE2A33A9B8006FFC4C /* Spellbound.scr in Resources */,
 				493A3C182A31E913001B6D76 /* ManicMiner.scr in Resources */,
 				493A3C1A2A31E913001B6D76 /* Exolon.scr in Resources */,
 				4938FD982A320FFA007304ED /* Zx.rom in Resources */,
