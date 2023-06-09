@@ -54,7 +54,7 @@ typedef struct Zx {
   
   uint32_t* videoMem;
   uint8_t const* romMem;
-  uint8_t* scrMem;
+  uint8_t const* scrMem;
 } Zx;
 
 void zxUpdate(Zx* zx, int steps);
