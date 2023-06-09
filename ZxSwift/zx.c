@@ -19,16 +19,16 @@ void zxUpdate(Zx* zxp, int steps) {
           int hAddr = ((zx.hCounter - hLeftBorderSize) >> 3) & 0x1f;
           int vAddr = zx.vCounter - vTopBorderSize;
           int pixelsAddr = (((vAddr & 0xC0) | ((vAddr & 0x7) << 3) | ((vAddr & 0x38) >> 3)) << 5) | hAddr;
-          zx.pixels = zx.scrMem[pixelsAddr];
+          zx.pixels = pixelsAddr / 8 > zx.frameCounter ? 0xFF : zx.scrMem[pixelsAddr];
           int attrAddr = 0x1800 | ((vAddr >> 3) << 5) | hAddr;
-          zx.attr = zx.scrMem[attrAddr];
+          zx.attr = attrAddr / 8 > zx.frameCounter ? 0x07 : zx.scrMem[attrAddr];
         }
 
         bool pixelOn = (zx.pixels & 0x80) != 0;
         zx.pixels = zx.pixels << 1;
 
         bool flashOn = (zx.attr & 0x80) != 0;
-        bool alternateOn = (zx.flashCounter & 0x10) != 0;
+        bool alternateOn = (zx.frameCounter & 0x10) != 0;
 
         bool inkOn = flashOn && alternateOn ? !pixelOn : pixelOn;
         red = (zx.attr & (inkOn ? 0x02 : 0x10)) != 0;
@@ -63,7 +63,7 @@ void zxUpdate(Zx* zxp, int steps) {
       if (zx.vCounter == vSize) {
         zx.vCounter = 0;
         zx.memAddr = 0;
-        zx.flashCounter++;
+        zx.frameCounter++;
       }
     }
 

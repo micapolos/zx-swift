@@ -48,7 +48,7 @@ typedef struct Zx {
   int attr;
   int pixels;
   
-  int flashCounter;
+  int frameCounter;
   
   Reg reg;
   
