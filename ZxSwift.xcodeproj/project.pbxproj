@@ -16,7 +16,7 @@
 		493A3C182A31E913001B6D76 /* ManicMiner.scr in Resources */ = {isa = PBXBuildFile; fileRef = 493A3C142A31E913001B6D76 /* ManicMiner.scr */; };
 		493A3C192A31E913001B6D76 /* DynamiteDan.scr in Resources */ = {isa = PBXBuildFile; fileRef = 493A3C152A31E913001B6D76 /* DynamiteDan.scr */; };
 		493A3C1A2A31E913001B6D76 /* Exolon.scr in Resources */ = {isa = PBXBuildFile; fileRef = 493A3C162A31E913001B6D76 /* Exolon.scr */; };
-		493A3C1C2A31E967001B6D76 /* Zx.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A3C1B2A31E967001B6D76 /* Zx.swift */; };
+		49D415122A334EC900DD422A /* zx.c in Sources */ = {isa = PBXBuildFile; fileRef = 49D415112A334EC900DD422A /* zx.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,7 +31,9 @@
 		493A3C142A31E913001B6D76 /* ManicMiner.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = ManicMiner.scr; sourceTree = "<group>"; };
 		493A3C152A31E913001B6D76 /* DynamiteDan.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = DynamiteDan.scr; sourceTree = "<group>"; };
 		493A3C162A31E913001B6D76 /* Exolon.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Exolon.scr; sourceTree = "<group>"; };
-		493A3C1B2A31E967001B6D76 /* Zx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zx.swift; sourceTree = "<group>"; };
+		49D4150F2A334EC900DD422A /* ZxSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZxSwift-Bridging-Header.h"; sourceTree = "<group>"; };
+		49D415102A334EC900DD422A /* zx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zx.h; sourceTree = "<group>"; };
+		49D415112A334EC900DD422A /* zx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zx.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,7 +68,8 @@
 			children = (
 				493A3C042A31E89B001B6D76 /* ZxSwiftApp.swift */,
 				493A3C062A31E89B001B6D76 /* ContentView.swift */,
-				493A3C1B2A31E967001B6D76 /* Zx.swift */,
+				49D415102A334EC900DD422A /* zx.h */,
+				49D415112A334EC900DD422A /* zx.c */,
 				4938FD972A320FFA007304ED /* Zx.rom */,
 				493A3C082A31E89D001B6D76 /* Assets.xcassets */,
 				493A3C0D2A31E89D001B6D76 /* ZxSwift.entitlements */,
@@ -75,6 +78,7 @@
 				493A3C142A31E913001B6D76 /* ManicMiner.scr */,
 				493A3C132A31E913001B6D76 /* RoboCop.scr */,
 				493A3C0A2A31E89D001B6D76 /* Preview Content */,
+				49D4150F2A334EC900DD422A /* ZxSwift-Bridging-Header.h */,
 			);
 			path = ZxSwift;
 			sourceTree = "<group>";
@@ -119,6 +123,7 @@
 				TargetAttributes = {
 					493A3C002A31E89B001B6D76 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 					};
 				};
 			};
@@ -164,7 +169,7 @@
 			files = (
 				493A3C072A31E89B001B6D76 /* ContentView.swift in Sources */,
 				493A3C052A31E89B001B6D76 /* ZxSwiftApp.swift in Sources */,
-				493A3C1C2A31E967001B6D76 /* Zx.swift in Sources */,
+				49D415122A334EC900DD422A /* zx.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +294,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ZxSwift/ZxSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -305,6 +311,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.micapolos.ZxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ZxSwift/ZxSwift-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
@@ -314,6 +322,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ZxSwift/ZxSwift.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -330,6 +339,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.micapolos.ZxSwift;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ZxSwift/ZxSwift-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
