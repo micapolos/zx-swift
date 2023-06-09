@@ -14,7 +14,7 @@ struct ContentView: View {
     var zx = Zx()
     var lastDate: Date? = nil
     let romData = try! Data(contentsOf: Bundle.main.url(forResource: "Zx", withExtension: "rom")!)
-    var scrData = try! Data(contentsOf: Bundle.main.url(forResource: "RoboCop", withExtension: "scr")!)
+    var scrData = try! Data(contentsOf: Bundle.main.url(forResource: "DynamiteDan", withExtension: "scr")!)
     TimelineView(.animation) { timeline in
       Canvas { context, size in
         let timeInterval = timeline.date.timeIntervalSince(lastDate ?? timeline.date)
@@ -42,11 +42,5 @@ struct ContentView: View {
         context.draw(image, in: CGRect(origin: .zero, size: size))
       }.aspectRatio(CGSize(width: CGFloat(hLineSize), height: CGFloat(vLineSize)), contentMode: ContentMode.fill)
     }
-  }
-}
-
-struct ContentView_Previews: PreviewProvider {
-  static var previews: some View {
-    ContentView()
   }
 }
