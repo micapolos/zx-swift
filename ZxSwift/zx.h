@@ -24,17 +24,21 @@ static const int vFrameSize = hSize * vSize;
 
 static const int barSize = vFrameSize / 28 - 43;
 
-typedef struct Reg {
+typedef struct Z80 {
   int pc, sp;
   int lhs, rhs;
   int a, f;
   int a2, f2;
-  int wz, bc, de, hl;
-  int wz2, bc2, de2, hl2;
+  int b, c, d, e, h, l, w, z;
+  int b2, c2, d2, e2, h2, l2, w2, z2;
   int ix, iy;
   int i, r;
   int op;
-} Reg;
+  int data, addr;
+  bool altAcc;
+  bool altReg;
+  bool clk;
+} Z80;
 
 typedef struct Zx {
   int vCounter;
@@ -50,7 +54,7 @@ typedef struct Zx {
   
   int frameCounter;
   
-  Reg reg;
+  Z80 z80;
   
   uint32_t* videoMem;
   uint8_t const* romMem;

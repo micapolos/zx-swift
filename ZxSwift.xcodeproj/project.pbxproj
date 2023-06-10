@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4921CC932A352E490051E4B6 /* audio.c in Sources */ = {isa = PBXBuildFile; fileRef = 4921CC922A352E490051E4B6 /* audio.c */; };
+		4921CCA32A353D010051E4B6 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4921CC9A2A353A560051E4B6 /* AudioToolbox.framework */; };
 		4938FD982A320FFA007304ED /* Zx.rom in Resources */ = {isa = PBXBuildFile; fileRef = 4938FD972A320FFA007304ED /* Zx.rom */; };
 		493A3C052A31E89B001B6D76 /* ZxSwiftApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A3C042A31E89B001B6D76 /* ZxSwiftApp.swift */; };
 		493A3C072A31E89B001B6D76 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493A3C062A31E89B001B6D76 /* ContentView.swift */; };
@@ -21,6 +23,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4921CC912A352E490051E4B6 /* audio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = audio.h; sourceTree = "<group>"; };
+		4921CC922A352E490051E4B6 /* audio.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.objc; path = audio.c; sourceTree = "<group>"; };
+		4921CC9A2A353A560051E4B6 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		4938FD972A320FFA007304ED /* Zx.rom */ = {isa = PBXFileReference; lastKnownFileType = file; path = Zx.rom; sourceTree = "<group>"; };
 		493A3C012A31E89B001B6D76 /* ZxSwift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZxSwift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		493A3C042A31E89B001B6D76 /* ZxSwiftApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZxSwiftApp.swift; sourceTree = "<group>"; };
@@ -33,6 +38,7 @@
 		493A3C152A31E913001B6D76 /* DynamiteDan.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = DynamiteDan.scr; sourceTree = "<group>"; };
 		493A3C162A31E913001B6D76 /* Exolon.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Exolon.scr; sourceTree = "<group>"; };
 		497CB3CD2A33A9B8006FFC4C /* Spellbound.scr */ = {isa = PBXFileReference; lastKnownFileType = file; path = Spellbound.scr; sourceTree = "<group>"; };
+		49C9E6702A35410100515E35 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		49D4150F2A334EC900DD422A /* ZxSwift-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ZxSwift-Bridging-Header.h"; sourceTree = "<group>"; };
 		49D415102A334EC900DD422A /* zx.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = zx.h; sourceTree = "<group>"; };
 		49D415112A334EC900DD422A /* zx.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = zx.c; sourceTree = "<group>"; };
@@ -43,17 +49,27 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4921CCA32A353D010051E4B6 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4921CC942A353A2A0051E4B6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4921CC9A2A353A560051E4B6 /* AudioToolbox.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		493A3BF82A31E89B001B6D76 = {
 			isa = PBXGroup;
 			children = (
 				493A3C032A31E89B001B6D76 /* ZxSwift */,
 				493A3C022A31E89B001B6D76 /* Products */,
+				4921CC942A353A2A0051E4B6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -68,10 +84,13 @@
 		493A3C032A31E89B001B6D76 /* ZxSwift */ = {
 			isa = PBXGroup;
 			children = (
+				49C9E6702A35410100515E35 /* Info.plist */,
 				493A3C042A31E89B001B6D76 /* ZxSwiftApp.swift */,
 				493A3C062A31E89B001B6D76 /* ContentView.swift */,
 				49D415102A334EC900DD422A /* zx.h */,
 				49D415112A334EC900DD422A /* zx.c */,
+				4921CC912A352E490051E4B6 /* audio.h */,
+				4921CC922A352E490051E4B6 /* audio.c */,
 				4938FD972A320FFA007304ED /* Zx.rom */,
 				493A3C082A31E89D001B6D76 /* Assets.xcassets */,
 				493A3C0D2A31E89D001B6D76 /* ZxSwift.entitlements */,
@@ -173,6 +192,7 @@
 			files = (
 				493A3C072A31E89B001B6D76 /* ContentView.swift in Sources */,
 				493A3C052A31E89B001B6D76 /* ZxSwiftApp.swift in Sources */,
+				4921CC932A352E490051E4B6 /* audio.c in Sources */,
 				49D415122A334EC900DD422A /* zx.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -306,6 +326,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ZxSwift/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZxSwift/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -334,6 +355,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ZxSwift/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = ZxSwift/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

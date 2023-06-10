@@ -72,6 +72,11 @@ void zxUpdate(Zx* zxp, int steps) {
       zx.barCounter = 0;
       zx.barOn = !zx.barOn;
     }
+    
+    zx.z80.clk = !zx.z80.clk;
+    if (zx.z80.clk) {
+      
+    }
   }
   *zxp = zx;
 }

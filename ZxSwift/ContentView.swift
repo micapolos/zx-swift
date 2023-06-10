@@ -1,6 +1,10 @@
 import SwiftUI
+import AudioToolbox
 
 struct ContentView: View {
+  init() {
+    zxAudioInit();
+  }
   var body: some View {
     let ctx = CGContext(
       data: nil,
